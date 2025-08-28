@@ -9,8 +9,8 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
         <Routes>
+            <Route path="/" element={<IndexPage/>} index></Route>
             <Route element={<Layout/>}>
-              <Route path="/" element={<IndexPage/>} index></Route>
               <Route path="/homepage" element={<HomePage/>}></Route>
               <Route path="/profile" element={<ProfilePage/>}></Route>
             </Route>
