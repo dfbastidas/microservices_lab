@@ -4,10 +4,10 @@ export default function Header() {
       <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container">
-                <Link to="/" className="navbar-brand">Login</Link>
+                <Link to="/videos" className="navbar-brand">Videos</Link>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <NavLink to="/homepage" className={({isActive})  => isActive ? 'nav-link active': 'nav-link'}>Videos</NavLink>
+                        <NavLink to="/add-video" className={({isActive})  => isActive ? 'nav-link active': 'nav-link'}>Agregar Video</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/profile" className={({isActive})  => isActive ? 'nav-link active': 'nav-link'}>Perfil</NavLink>
