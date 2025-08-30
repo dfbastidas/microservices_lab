@@ -8,12 +8,13 @@ export default function AddVideoPage() {
     const InitialStateVideo = {
         id: 0,
         name: '',
+        description: "",
         url: ''
     }
     const [video, setVideo] = useState<VideoItem>(InitialStateVideo);
     
     
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setVideo(prev => ({ 
           ...prev, 
@@ -34,6 +35,11 @@ export default function AddVideoPage() {
                     <label className="form-label">Movie Name</label>
                     <input type="text" className="form-control" name="name" value={video.name} onChange={handleChange}/>
                     <div id="movieName" className="form-text">Please set the input with the movie name</div>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Description</label>
+                    <textarea className="form-control" name="description" placeholder="Write your description here..." value={video.description} onChange={handleChange}></textarea>
+                    <div id="movieDescription" className="form-text">Please add your description</div>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Movie Url</label>

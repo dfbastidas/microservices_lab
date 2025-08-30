@@ -5,14 +5,12 @@ export default function HomePage() {
   return (
     <>
       <div className='row'>
-        {videos.map(video => (
-          <>
-            <PreviewVideo
-              key={video.id}
-              video = {video}
-              removeVideo = {removeVideo}
-            />
-          </>
+        {videos.map(video => (          
+          <PreviewVideo
+            key={video.id}
+            video = {video}
+            removeVideo = {removeVideo}
+          />          
         ))}
       </div>
     </>
