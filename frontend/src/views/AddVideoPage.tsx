@@ -35,11 +35,6 @@ export default function AddVideoPage() {
         <>
             <form className='container bg-warning p-3' onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label className="form-label">Movie Id</label>
-                    <input type="text" className="form-control" name="id" value={video.id} onChange={handleChange}/>
-                    <div id="movieId" className="form-text">Please set the input with the movie id</div>
-                </div>
-                <div className="mb-3">
                     <label className="form-label">Movie Name</label>
                     <input type="text" className="form-control" name="name" value={video.name} onChange={handleChange}/>
                     <div id="movieName" className="form-text">Please set the input with the movie name</div>
