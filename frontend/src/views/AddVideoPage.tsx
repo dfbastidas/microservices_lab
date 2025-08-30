@@ -2,11 +2,13 @@ import { useState } from 'react';
 import useVideo from '../hooks/useVideo';
 import type { ChangeEvent, FormEvent } from "react";
 import type { VideoItem } from '../types/index';
+import { v4 as uuid } from 'uuid'
+
 export default function AddVideoPage() {
 
     const {addVideo} = useVideo();
     const InitialStateVideo = {
-        id: 0,
+        id: uuid(),
         name: '',
         description: "",
         url: ''
@@ -34,7 +36,7 @@ export default function AddVideoPage() {
             <form className='container bg-warning p-3' onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label className="form-label">Movie Id</label>
-                    <input type="number" className="form-control" name="id" value={video.id} onChange={handleChange}/>
+                    <input type="text" className="form-control" name="id" value={video.id} onChange={handleChange}/>
                     <div id="movieId" className="form-text">Please set the input with the movie id</div>
                 </div>
                 <div className="mb-3">

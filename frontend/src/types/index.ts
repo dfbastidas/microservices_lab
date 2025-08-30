@@ -1,5 +1,5 @@
 export type VideoItem = {
-    "id": number,
+    "id": string,
     "name": string,
     "description": string,
     "url": string
