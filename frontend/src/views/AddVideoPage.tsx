@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import useVideo from '../hooks/useVideo';
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import type { VideoItem } from '../types/index';
 export default function AddVideoPage() {
 
@@ -20,12 +20,18 @@ export default function AddVideoPage() {
           ...prev, 
           [name]: name === "id" ? Number(value) : value 
         }));
-      };
+    };
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();         // evita recargar la página
+        addVideo(video);            // guardas el video
+        setVideo(InitialStateVideo); // reseteas el formulario
+    };
+
 
     return (
-
         <>
-            <form className='container bg-warning p-3'>
+            <form className='container bg-warning p-3' onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label className="form-label">Movie Id</label>
                     <input type="number" className="form-control" name="id" value={video.id} onChange={handleChange}/>
@@ -47,9 +53,8 @@ export default function AddVideoPage() {
                 </div>
                 
                 <button 
-                    type="button" 
-                    className="btn btn-primary" 
-                    onClick={() => addVideo(video)}
+                    type="submit" 
+                    className="btn btn-primary"                     
                 >
                     Submit
                 </button>
